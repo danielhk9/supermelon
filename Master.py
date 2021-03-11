@@ -7,7 +7,7 @@ from BeforeSignIn.ReadyToShip import CheckReadyToShip
 from BeforeSignIn.AboutUS import CheckAboutUs
 from Helpers.Functions import changeWindowAndSwitch
 from SignInAndOut.LoginToSite import LoginFeature
-from AfterSignIn.UrlAndProducts import CheckAllProductsURL
+from AfterSignIn.UrlAndProducts import CheckAllProducts
 
 
 class InitFlow(unittest.TestCase):
@@ -50,7 +50,7 @@ class InitFlow(unittest.TestCase):
     def testAllProducts(self):
         print('daniel')
         self.loginToSite()
-        results = CheckAllProductsURL(self.driver).pressOnEachProduct()
+        results = CheckAllProducts(self.driver).pressOnEachProduct()
         self.assertEqual(results, True)
 
 

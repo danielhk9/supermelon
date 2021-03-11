@@ -4,7 +4,7 @@ from Helpers.Functions import getAllSubAndMainCategories, findElementByXpath, fi
     getTagName, changeWindowAndSwitch, getTagNames
 
 
-class CheckAllProductsURL:
+class CheckAllProducts:
 
     def __init__(self, driver):
         self.driver = driver
