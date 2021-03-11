@@ -47,7 +47,8 @@ class InitFlow(unittest.TestCase):
         results = LoginFeature(self.driver).checkLoginInFeature()
         self.assertEqual(results, True)
 
-    def testAllCategoriesURL(self):
+    def testAllProducts(self):
+        print('daniel')
         self.loginToSite()
         results = CheckAllProductsURL(self.driver).pressOnEachProduct()
         self.assertEqual(results, True)
@@ -71,4 +72,5 @@ class InitFlow(unittest.TestCase):
 
 
 if __name__ == '__main__':
+
     unittest.main()
