@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3cbd141b-696f-4013-ad3c-72ff35598329" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1oXDm6YLvbAR0DH7FkNrhDYeHNZ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="vcs.Subversion" />
+  </component>
+  <component name="RunManager" selected="Python tests.Unittests for Master.InitFlow.testAllCategoriesURL">
+    <configuration name="UrlAndProducts" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SuperMelon" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/AfterSignIn" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/AfterSignIn/UrlAndProducts.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SuperMelon" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for BeforeSignIn.AllCategories.CheckAllCategories" type="tests" factoryName="Unittests" nameIsGenerated="true">
+      <module name="SuperMelon" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="$PROJECT_DIR$/../Moon/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/BeforeSignIn" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_pattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;BeforeSignIn.AllCategories.CheckAllCategories&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for BeforeSignIn.AllCategories.CheckAllCategories.pressOnEachCategory" type="tests" factoryName="Unittests" nameIsGenerated="true">
+      <module name="SuperMelon" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="$PROJECT_DIR$/../Moon/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/BeforeSignIn" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_pattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;BeforeSignIn.AllCategories.CheckAllCategories.pressOnEachCategory&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for Master.InitFlow.testAllCategoriesURL" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="SuperMelon" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="/usr/local/bin/python3.9" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_pattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;Master.InitFlow.testAllCategoriesURL&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for Master.InitFlow.testLogin" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="SuperMelon" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;Master.InitFlow.testLogin&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests in Master.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="SuperMelon" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/Master.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.UrlAndProducts" />
+      <item itemvalue="Python.test" />
+      <item itemvalue="Python tests.Unittests for BeforeSignIn.AllCategories.CheckAllCategories.pressOnEachCategory" />
+      <item itemvalue="Python tests.Unittests for BeforeSignIn.AllCategories.CheckAllCategories" />
+      <item itemvalue="Python tests.Unittests in Master.py" />
+      <item itemvalue="Python tests.Unittests for Master.InitFlow.testLogin" />
+      <item itemvalue="Python tests.Unittests for Master.InitFlow.testAllCategoriesURL" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Unittests for Master.InitFlow.testAllCategoriesURL" />
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.UrlAndProducts" />
+        <item itemvalue="Python tests.Unittests for Master.InitFlow.testLogin" />
+        <item itemvalue="Python tests.Unittests in Master.py" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>$USER_HOME$/.subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3cbd141b-696f-4013-ad3c-72ff35598329" name="Default Changelist" comment="" />
+      <created>1613424197196</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1613424197196</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="138" y="58" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1615413149111">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="138" y="58" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.777@0.23.1280.777" timestamp="1615413149111" />
+    <state x="-1219" y="57" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1366.745/-1366.23.1366.745@-1366.23.1366.745" timestamp="1613550698566" />
+    <state x="100" y="123" width="1166" height="545" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1613637840496">
+      <screen x="0" y="23" width="1366" height="745" />
+    </state>
+    <state x="100" y="123" width="1166" height="545" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.23.1366.745/-1366.23.1366.745@0.23.1366.745" timestamp="1613637840496" />
+    <state x="421" y="149" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615232520820">
+      <screen x="0" y="23" width="1366" height="745" />
+    </state>
+    <state x="421" y="149" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1280.23.1280.777/0.23.1366.745@0.23.1366.745" timestamp="1615232520820" />
+    <state x="499" y="318" key="Github.CreateGistDialog" timestamp="1615448267426">
+      <screen x="0" y="23" width="1366" height="745" />
+    </state>
+    <state x="499" y="318" key="Github.CreateGistDialog/-1280.23.1280.777/0.23.1366.745@0.23.1366.745" timestamp="1615448267426" />
+    <state width="1345" height="462" key="GridCell.Tab.0.bottom" timestamp="1615447432082">
+      <screen x="0" y="23" width="1366" height="745" />
+    </state>
+    <state width="1259" height="307" key="GridCell.Tab.0.bottom/-1280.23.1280.777/0.23.1366.745@-1280.23.1280.777" timestamp="1615391695365" />
+    <state width="1345" height="462" key="GridCell.Tab.0.bottom/-1280.23.1280.777/0.23.1366.745@0.23.1366.745" timestamp="1615447432082" />
+    <state width="1259" height="487" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1615416232417" />
+    <state width="1312" height="430" key="GridCell.Tab.0.bottom/0.23.1366.745/-1333.23.1333.745@-1333.23.1333.745" timestamp="1613721972381" />
+    <state width="1312" height="430" key="GridCell.Tab.0.bottom/0.23.1366.745/-1333.23.1333.745@0.23.1366.745" timestamp="1613722090568" />
+    <state width="1345" height="321" key="GridCell.Tab.0.bottom/0.23.1366.745/-1336.23.1336.745@0.23.1366.745" timestamp="1613721634138" />
+    <state width="1345" height="321" key="GridCell.Tab.0.bottom/0.23.1366.745/-1337.23.1337.745@0.23.1366.745" timestamp="1613721374923" />
+    <state width="1345" height="273" key="GridCell.Tab.0.bottom/0.23.1366.745/-1366.23.1366.745@-1366.23.1366.745" timestamp="1613551069386" />
+    <state width="1345" height="329" key="GridCell.Tab.0.bottom/0.23.1366.745/-1366.23.1366.745@0.23.1366.745" timestamp="1615151023730" />
+    <state width="1345" height="320" key="GridCell.Tab.0.bottom/2732.-9.1280.777/1366.-9.1366.745/0.23.1366.745@0.23.1366.745" timestamp="1614703275750" />
+    <state width="1345" height="500" key="GridCell.Tab.0.bottom/2732.-9.1280.777/1366.-9.1366.745/0.23.1366.745@1366.-9.1366.745" timestamp="1613558361806" />
+    <state width="1259" height="321" key="GridCell.Tab.0.bottom/34.23.1246.777@34.23.1246.777" timestamp="1614416044452" />
+    <state width="1259" height="293" key="GridCell.Tab.0.bottom/35.23.1245.777@35.23.1245.777" timestamp="1614453705295" />
+    <state width="1345" height="462" key="GridCell.Tab.0.center" timestamp="1615447432081">
+      <screen x="0" y="23" width="1366" height="745" />
+    </state>
+    <state width="1259" height="307" key="GridCell.Tab.0.center/-1280.23.1280.777/0.23.1366.745@-1280.23.1280.777" timestamp="1615391695364" />
+    <state width="1345" height="462" key="GridCell.Tab.0.center/-1280.23.1280.777/0.23.1366.745@0.23.1366.745" timestamp="1615447432081" />
+    <state width="1259" height="487" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1615416232416" />
+    <state width="1312" height="430" key="GridCell.Tab.0.center/0.23.1366.745/-1333.23.1333.745@-1333.23.1333.745" timestamp="1613721972380" />
+    <state width="1312" height="430" key="GridCell.Tab.0.center/0.23.1366.745/-1333.23.1333.745@0.23.1366.745" timestamp="1613722090567" />
+    <state width="1345" height="321" key="GridCell.Tab.0.center/0.23.1366.745/-1336.23.1336.745@0.23.1366.745" timestamp="1613721634138" />
+    <state width="1345" height="321" key="GridCell.Tab.0.center/0.23.1366.745/-1337.23.1337.745@0.23.1366.745" timestamp="1613721374923" />
+    <state width="1345" height="273" key="GridCell.Tab.0.center/0.23.1366.745/-1366.23.1366.745@-1366.23.1366.745" timestamp="1613551069386" />
+    <state width="1345" height="329" key="GridCell.Tab.0.center/0.23.1366.745/-1366.23.1366.745@0.23.1366.745" timestamp="1615151023729" />
+    <state width="1345" height="320" key="GridCell.Tab.0.center/2732.-9.1280.777/1366.-9.1366.745/0.23.1366.745@0.23.1366.745" timestamp="1614703275749" />
+    <state width="1345" height="500" key="GridCell.Tab.0.center/2732.-9.1280.777/1366.-9.1366.745/0.23.1366.745@1366.-9.1366.745" timestamp="1613558361805" />
+    <state width="1259" height="321" key="GridCell.Tab.0.center/34.23.1246.777@34.23.1246.777" timestamp="1614416044452" />
+    <state width="1259" height="293" key="GridCell.Tab.0.center/35.23.1245.777@35.23.1245.777" timestamp="1614453705295" />
+    <state width="1345" height="462" key="GridCell.Tab.0.left" timestamp="1615447432080">
+      <screen x="0" y="23" width="1366" height="745" />
+    </state>
+    <state width="1259" height="307" key="GridCell.Tab.0.left/-1280.23.1280.777/0.23.1366.745@-1280.23.1280.777" timestamp="1615391695364" />
+    <state width="1345" height="462" key="GridCell.Tab.0.left/-1280.23.1280.777/0.23.1366.745@0.23.1366.745" timestamp="1615447432080" />
+    <state width="1259" height="487" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1615416232416" />
+    <state width="1312" height="430" key="GridCell.Tab.0.left/0.23.1366.745/-1333.23.1333.745@-1333.23.1333.745" timestamp="1613721972380" />
+    <state width="1312" height="430" key="GridCell.Tab.0.left/0.23.1366.745/-1333.23.1333.745@0.23.1366.745" timestamp="1613722090567" />
+    <state width="1345" height="321" key="GridCell.Tab.0.left/0.23.1366.745/-1336.23.1336.745@0.23.1366.745" timestamp="1613721634137" />
+    <state width="1345" height="321" key="GridCell.Tab.0.left/0.23.1366.745/-1337.23.1337.745@0.23.1366.745" timestamp="1613721374922" />
+    <state width="1345" height="273" key="GridCell.Tab.0.left/0.23.1366.745/-1366.23.1366.745@-1366.23.1366.745" timestamp="1613551069385" />
+    <state width="1345" height="329" key="GridCell.Tab.0.left/0.23.1366.745/-1366.23.1366.745@0.23.1366.745" timestamp="1615151023729" />
+    <state width="1345" height="320" key="GridCell.Tab.0.left/2732.-9.1280.777/1366.-9.1366.745/0.23.1366.745@0.23.1366.745" timestamp="1614703275749" />
+    <state width="1345" height="500" key="GridCell.Tab.0.left/2732.-9.1280.777/1366.-9.1366.745/0.23.1366.745@1366.-9.1366.745" timestamp="1613558361804" />
+    <state width="1259" height="321" key="GridCell.Tab.0.left/34.23.1246.777@34.23.1246.777" timestamp="1614416044451" />
+    <state width="1259" height="293" key="GridCell.Tab.0.left/35.23.1245.777@35.23.1245.777" timestamp="1614453705294" />
+    <state width="1345" height="462" key="GridCell.Tab.0.right" timestamp="1615447432081">
+      <screen x="0" y="23" width="1366" height="745" />
+    </state>
+    <state width="1259" height="307" key="GridCell.Tab.0.right/-1280.23.1280.777/0.23.1366.745@-1280.23.1280.777" timestamp="1615391695365" />
+    <state width="1345" height="462" key="GridCell.Tab.0.right/-1280.23.1280.777/0.23.1366.745@0.23.1366.745" timestamp="1615447432081" />
+    <state width="1259" height="487" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1615416232417" />
+    <state width="1312" height="430" key="GridCell.Tab.0.right/0.23.1366.745/-1333.23.1333.745@-1333.23.1333.745" timestamp="1613721972381" />
+    <state width="1312" height="430" key="GridCell.Tab.0.right/0.23.1366.745/-1333.23.1333.745@0.23.1366.745" timestamp="1613722090568" />
+    <state width="1345" height="321" key="GridCell.Tab.0.right/0.23.1366.745/-1336.23.1336.745@0.23.1366.745" timestamp="1613721634138" />
+    <state width="1345" height="321" key="GridCell.Tab.0.right/0.23.1366.745/-1337.23.1337.745@0.23.1366.745" timestamp="1613721374923" />
+    <state width="1345" height="273" key="GridCell.Tab.0.right/0.23.1366.745/-1366.23.1366.745@-1366.23.1366.745" timestamp="1613551069386" />
+    <state width="1345" height="329" key="GridCell.Tab.0.right/0.23.1366.745/-1366.23.1366.745@0.23.1366.745" timestamp="1615151023730" />
+    <state width="1345" height="320" key="GridCell.Tab.0.right/2732.-9.1280.777/1366.-9.1366.745/0.23.1366.745@0.23.1366.745" timestamp="1614703275749" />
+    <state width="1345" height="500" key="GridCell.Tab.0.right/2732.-9.1280.777/1366.-9.1366.745/0.23.1366.745@1366.-9.1366.745" timestamp="1613558361805" />
+    <state width="1259" height="321" key="GridCell.Tab.0.right/34.23.1246.777@34.23.1246.777" timestamp="1614416044452" />
+    <state width="1259" height="293" key="GridCell.Tab.0.right/35.23.1245.777@35.23.1245.777" timestamp="1614453705295" />
+    <state width="1345" height="317" key="GridCell.Tab.1.bottom" timestamp="1615445834765">
+      <screen x="0" y="23" width="1366" height="745" />
+    </state>
+    <state width="1259" height="334" key="GridCell.Tab.1.bottom/-1280.23.1280.777/0.23.1366.745@-1280.23.1280.777" timestamp="1615197574326" />
+    <state width="1345" height="317" key="GridCell.Tab.1.bottom/-1280.23.1280.777/0.23.1366.745@0.23.1366.745" timestamp="1615445834765" />
+    <state width="1259" height="334" key="GridCell.Tab.1.bottom/0.23.1280.777@0.23.1280.777" timestamp="1615328348426" />
+    <state width="1345" height="321" key="GridCell.Tab.1.bottom/0.23.1366.745/-1333.23.1333.745@0.23.1366.745" timestamp="1613721651951" />
+    <state width="1345" height="321" key="GridCell.Tab.1.bottom/0.23.1366.745/-1336.23.1336.745@0.23.1366.745" timestamp="1613721364768" />
+    <state width="1345" height="321" key="GridCell.Tab.1.bottom/0.23.1366.745/-1337.23.1337.745@0.23.1366.745" timestamp="1613721378195" />
+    <state width="1345" height="318" key="GridCell.Tab.1.bottom/0.23.1366.745/-1366.23.1366.745@0.23.1366.745" timestamp="1615150963574" />
+    <state width="1345" height="320" key="GridCell.Tab.1.bottom/2732.-9.1280.777/1366.-9.1366.745/0.23.1366.745@0.23.1366.745" timestamp="1614703275748" />
+    <state width="1345" height="328" key="GridCell.Tab.1.bottom/2732.-9.1280.777/1366.-9.1366.745/0.23.1366.745@1366.-9.1366.745" timestamp="1613558319901" />
+    <state width="1259" height="321" key="GridCell.Tab.1.bottom/34.23.1246.777@34.23.1246.777" timestamp="1614416044450" />
+    <state width="1259" height="321" key="GridCell.Tab.1.bottom/35.23.1245.777@35.23.1245.777" timestamp="1614453514260" />
+    <state width="1345" height="317" key="GridCell.Tab.1.center" timestamp="1615445834764">
+      <screen x="0" y="23" width="1366" height="745" />
+    </state>
+    <state width="1259" height="334" key="GridCell.Tab.1.center/-1280.23.1280.777/0.23.1366.745@-1280.23.1280.777" timestamp="1615197574324" />
+    <state width="1345" height="317" key="GridCell.Tab.1.center/-1280.23.1280.777/0.23.1366.745@0.23.1366.745" timestamp="1615445834764" />
+    <state width="1259" height="334" key="GridCell.Tab.1.center/0.23.1280.777@0.23.1280.777" timestamp="1615328348424" />
+    <state width="1345" height="321" key="GridCell.Tab.1.center/0.23.1366.745/-1333.23.1333.745@0.23.1366.745" timestamp="1613721651950" />
+    <state width="1345" height="321" key="GridCell.Tab.1.center/0.23.1366.745/-1336.23.1336.745@0.23.1366.745" timestamp="1613721364766" />
+    <state width="1345" height="321" key="GridCell.Tab.1.center/0.23.1366.745/-1337.23.1337.745@0.23.1366.745" timestamp="1613721378194" />
+    <state width="1345" height="318" key="GridCell.Tab.1.center/0.23.1366.745/-1366.23.1366.745@0.23.1366.745" timestamp="1615150963573" />
+    <state width="1345" height="320" key="GridCell.Tab.1.center/2732.-9.1280.777/1366.-9.1366.745/0.23.1366.745@0.23.1366.745" timestamp="1614703275747" />
+    <state width="1345" height="328" key="GridCell.Tab.1.center/2732.-9.1280.777/1366.-9.1366.745/0.23.1366.745@1366.-9.1366.745" timestamp="1613558319901" />
+    <state width="1259" height="321" key="GridCell.Tab.1.center/34.23.1246.777@34.23.1246.777" timestamp="1614416044449" />
+    <state width="1259" height="321" key="GridCell.Tab.1.center/35.23.1245.777@35.23.1245.777" timestamp="1614453514260" />
+    <state width="1345" height="317" key="GridCell.Tab.1.left" timestamp="1615445834763">
+      <screen x="0" y="23" width="1366" height="745" />
+    </state>
+    <state width="1259" height="334" key="GridCell.Tab.1.left/-1280.23.1280.777/0.23.1366.745@-1280.23.1280.777" timestamp="1615197574323" />
+    <state width="1345" height="317" key="GridCell.Tab.1.left/-1280.23.1280.777/0.23.1366.745@0.23.1366.745" timestamp="1615445834763" />
+    <state width="1259" height="334" key="GridCell.Tab.1.left/0.23.1280.777@0.23.1280.777" timestamp="1615328348424" />
+    <state width="1345" height="321" key="GridCell.Tab.1.left/0.23.1366.745/-1333.23.1333.745@0.23.1366.745" timestamp="1613721651949" />
+    <state width="1345" height="321" key="GridCell.Tab.1.left/0.23.1366.745/-1336.23.1336.745@0.23.1366.745" timestamp="1613721364766" />
+    <state width="1345" height="321" key="GridCell.Tab.1.left/0.23.1366.745/-1337.23.1337.745@0.23.1366.745" timestamp="1613721378193" />
+    <state width="1345" height="318" key="GridCell.Tab.1.left/0.23.1366.745/-1366.23.1366.745@0.23.1366.745" timestamp="1615150963572" />
+    <state width="1345" height="320" key="GridCell.Tab.1.left/2732.-9.1280.777/1366.-9.1366.745/0.23.1366.745@0.23.1366.745" timestamp="1614703275747" />
+    <state width="1345" height="328" key="GridCell.Tab.1.left/2732.-9.1280.777/1366.-9.1366.745/0.23.1366.745@1366.-9.1366.745" timestamp="1613558319900" />
+    <state width="1259" height="321" key="GridCell.Tab.1.left/34.23.1246.777@34.23.1246.777" timestamp="1614416044449" />
+    <state width="1259" height="321" key="GridCell.Tab.1.left/35.23.1245.777@35.23.1245.777" timestamp="1614453514259" />
+    <state width="1345" height="317" key="GridCell.Tab.1.right" timestamp="1615445834764">
+      <screen x="0" y="23" width="1366" height="745" />
+    </state>
+    <state width="1259" height="334" key="GridCell.Tab.1.right/-1280.23.1280.777/0.23.1366.745@-1280.23.1280.777" timestamp="1615197574324" />
+    <state width="1345" height="317" key="GridCell.Tab.1.right/-1280.23.1280.777/0.23.1366.745@0.23.1366.745" timestamp="1615445834764" />
+    <state width="1259" height="334" key="GridCell.Tab.1.right/0.23.1280.777@0.23.1280.777" timestamp="1615328348425" />
+    <state width="1345" height="321" key="GridCell.Tab.1.right/0.23.1366.745/-1333.23.1333.745@0.23.1366.745" timestamp="1613721651950" />
+    <state width="1345" height="321" key="GridCell.Tab.1.right/0.23.1366.745/-1336.23.1336.745@0.23.1366.745" timestamp="1613721364767" />
+    <state width="1345" height="321" key="GridCell.Tab.1.right/0.23.1366.745/-1337.23.1337.745@0.23.1366.745" timestamp="1613721378194" />
+    <state width="1345" height="318" key="GridCell.Tab.1.right/0.23.1366.745/-1366.23.1366.745@0.23.1366.745" timestamp="1615150963573" />
+    <state width="1345" height="320" key="GridCell.Tab.1.right/2732.-9.1280.777/1366.-9.1366.745/0.23.1366.745@0.23.1366.745" timestamp="1614703275748" />
+    <state width="1345" height="328" key="GridCell.Tab.1.right/2732.-9.1280.777/1366.-9.1366.745/0.23.1366.745@1366.-9.1366.745" timestamp="1613558319901" />
+    <state width="1259" height="321" key="GridCell.Tab.1.right/34.23.1246.777@34.23.1246.777" timestamp="1614416044450" />
+    <state width="1259" height="321" key="GridCell.Tab.1.right/35.23.1245.777@35.23.1245.777" timestamp="1614453514260" />
+    <state x="191" y="32" key="SettingsEditor" timestamp="1615448232544">
+      <screen x="0" y="23" width="1366" height="745" />
+    </state>
+    <state x="191" y="32" key="SettingsEditor/-1280.23.1280.777/0.23.1366.745@0.23.1366.745" timestamp="1615448232544" />
+    <state x="179" y="32" key="SettingsEditor/0.23.1280.777@0.23.1280.777" timestamp="1615413160248" />
+    <state x="192" y="34" key="SettingsEditor/0.23.1366.745/-1366.23.1366.745@0.23.1366.745" timestamp="1613857741584" />
+    <state width="683" height="372" key="XDebugger.FullValuePopup" timestamp="1613818015582">
+      <screen x="0" y="23" width="1366" height="745" />
+    </state>
+    <state width="683" height="372" key="XDebugger.FullValuePopup/0.23.1366.745/-1366.23.1366.745@0.23.1366.745" timestamp="1613818015582" />
+    <state x="-1267" y="48" width="1254" height="723" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1615447370671">
+      <screen x="-1280" y="23" width="1280" height="777" />
+    </state>
+    <state x="-1267" y="48" width="1254" height="723" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog/-1280.23.1280.777/0.23.1366.745@0.23.1366.745" timestamp="1615447370671" />
+    <state x="100" y="123" width="1080" height="545" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1280.777@0.23.1280.777" timestamp="1614454392033" />
+    <state x="107" y="119" width="1153" height="523" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1366.745/-1366.23.1366.745@0.23.1366.745" timestamp="1614709236803" />
+    <state x="27" y="50" width="1313" height="692" maximized="true" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog" timestamp="1615447370672">
+      <screen x="0" y="23" width="1366" height="745" />
+    </state>
+    <state x="27" y="50" width="1313" height="692" maximized="true" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/-1280.23.1280.777/0.23.1366.745@0.23.1366.745" timestamp="1615447370672" />
+    <state x="94" y="127" width="1093" height="569" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/0.23.1280.777@0.23.1280.777" timestamp="1615239413994" />
+    <state x="100" y="123" width="1166" height="545" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/0.23.1366.745/-1366.23.1366.745@0.23.1366.745" timestamp="1613557338721" />
+    <state x="336" y="23" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1614851418076">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="336" y="23" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1280.777@0.23.1280.777" timestamp="1614851418076" />
+    <state x="363" y="152" width="639" height="486" key="find.popup" timestamp="1615148273881">
+      <screen x="0" y="23" width="1366" height="745" />
+    </state>
+    <state x="363" y="152" width="639" height="486" key="find.popup/0.23.1366.745/-1366.23.1366.745@0.23.1366.745" timestamp="1615148273881" />
+    <state x="348" y="92" width="670" height="676" key="search.everywhere.popup" timestamp="1615146027732">
+      <screen x="0" y="23" width="1366" height="745" />
+    </state>
+    <state x="348" y="92" width="670" height="676" key="search.everywhere.popup/0.23.1366.745/-1366.23.1366.745@0.23.1366.745" timestamp="1615146027732" />
+    <state x="474" y="80" width="324" height="415" key="svn.repositoryBrowser" timestamp="1615448161540">
+      <screen x="0" y="23" width="1366" height="745" />
+    </state>
+    <state x="474" y="80" width="324" height="415" key="svn.repositoryBrowser/-1280.23.1280.777/0.23.1366.745@0.23.1366.745" timestamp="1615448161540" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/BeforeSignIn/AboutUS.py</url>
+          <line>21</line>
+          <option name="timeStamp" value="78" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/BeforeSignIn/AllCategories.py</url>
+          <line>21</line>
+          <option name="timeStamp" value="80" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="tests">
+        <watch expression="self" />
+        <watch expression="subCategory" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>
