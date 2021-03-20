@@ -20,10 +20,10 @@ import json
 import language_check
 def ss():
     tool = language_check.LanguageTool('en-US')
-    text = u'Your payment is safe with us. Supermelon holds your payment in escrow and will provide you with a full refund in the event that:1. You don’t receive your order 2. You receive the wrong item. 3. The product(s) you ordered are not as described. '
+    text = 'Your payment is safe with us. Supermelon holds your payment in escrow and will provide you with a full refund in the event that:1. You don’t receive your order 2. You receive the wrong item. 3. The product(s) you ordered are not as described. '
     matches = tool.check(text)
     for s in matches:
-        print(s)
+        if "Suggestion: Supermen" in str(s):
 
 
 

@@ -1,6 +1,6 @@
 from time import sleep
 
-from selenium.common.exceptions import ElementNotInteractableException
+from selenium.common.exceptions import ElementNotInteractableException, NoSuchElementException
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.keys import Keys
 
@@ -64,8 +64,11 @@ def findElementByClassName(driver, className):
 
 def findElementByXpath(driver, xpath):
     #example -  '//span[@class="sm_megamenu_title_link"]
-    element = driver.find_element_by_xpath(xpath)
-    return element
+    try:
+        element = driver.find_element_by_xpath(xpath)
+        return element
+    except NoSuchElementException:
+        return False
 
 
 def findElementsByXpath(driver, xpath):

@@ -13,7 +13,6 @@ class CheckAllProducts:
         self.numberOFTestedProducts = 0
 
     def pressOnEachProduct(self):
-        sleep(5)
         findElementByXpath(self.driver, '//a[@title="Browse Categories"]').click()
         changeWindowAndSwitch(self.driver, 0)
         categories = getAllSubAndMainCategories(self.driver)
@@ -45,8 +44,11 @@ class CheckAllProducts:
         self.driver.switch_to.window(self.driver.window_handles[0])
         self.pages.clear()
 
-    def getAllUrlPages(self):
+    def getAllUrlPages(self, checkSpelling=None):
         elementPages = findElementByXpath(self.driver, '//ul[@class="items pages-items"]')
+        if not elementPages:
+            self.pages.insert(0, "current")
+            return self.pages
         pages = getTagNames(elementPages, "li")
         for page in pages:
             try:
@@ -58,6 +60,7 @@ class CheckAllProducts:
                     continue
             except NoSuchElementException:
                 self.pages.insert(0, "current")
+        return self.pages
 
     def clickOnItem(self):
         for pageNumber, page in enumerate(self.pages):
@@ -77,5 +80,6 @@ class CheckAllProducts:
                     name = getTagName(el[numOFElement], "strong").text
                     print(f'The url of {name} is:{url}')
                     continue
-                self.driver.get(url.get_attribute("href"))
+                print(url)
+                self.driver.get(url)
                 self.driver.back()

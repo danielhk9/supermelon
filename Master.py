@@ -1,24 +1,29 @@
-import unittest
+import unittest2
 from selenium import webdriver
+from selenium.webdriver import DesiredCapabilities
+
 from BeforeSignIn.AllCategories import CheckAllCategories
 from BeforeSignIn.AllServices import CheckAllServices
 from BeforeSignIn.Blog import CheckBlog
 from BeforeSignIn.ReadyToShip import CheckReadyToShip
 from BeforeSignIn.AboutUS import CheckAboutUs
-from Helpers.Functions import changeWindowAndSwitch
+from Helpers.Functions import changeWindowAndSwitch, findElementsByXpath
 from SignInAndOut.LoginToSite import LoginFeature
 from AfterSignIn.UrlAndProducts import CheckAllProducts
-
-
-class InitFlow(unittest.TestCase):
+from BeforeSignIn.Spelling import CheckSpellingBeforeSignIn
+import os
+class InitFlow(unittest2.TestCase):
 
     @classmethod
     def setUpClass(cls):
         print("setUpClass")
-        cls.driver = webdriver.Chrome(executable_path='/Users/danielh/Downloads/chromedriver')
+        capabilities = DesiredCapabilities.CHROME
+        capabilities["goog:loggingPrefs"] = {"performance": "ALL"}
+        print(os.getcwd())
+        cls.driver = webdriver.Chrome(executable_path=f'{os.getcwd()}/chromedriver', desired_capabilities=capabilities)
         cls.driver.implicitly_wait(10)
         cls.driver.maximize_window()
-        cls.driver.get("https://supermelon.com")
+        cls.driver.get("https://supermelon.com/")
 
     def testAllCategories(self):
         print("test All Cate")
@@ -26,12 +31,10 @@ class InitFlow(unittest.TestCase):
         self.assertEqual(results, True)
 
     def testAllServices(self):
-        print("Services")
         results = CheckAllServices(self.driver).pressOnEachServices()
         self.assertEqual(results, True)
 
     def testReadyToShip(self):
-        print("ready to ship")
         results = CheckReadyToShip(self.driver).pressOnReadyToShip()
         self.assertEqual(results, True)
 
@@ -48,11 +51,13 @@ class InitFlow(unittest.TestCase):
         self.assertEqual(results, True)
 
     def testAllProducts(self):
-        print('daniel')
         self.loginToSite()
         results = CheckAllProducts(self.driver).pressOnEachProduct()
         self.assertEqual(results, True)
 
+    def testSpelling(self):
+        results = CheckSpellingBeforeSignIn(self.driver).getAllText()
+        self.assertEqual(results, True)
 
     def tearDown(self):
         while True:
@@ -72,5 +77,4 @@ class InitFlow(unittest.TestCase):
 
 
 if __name__ == '__main__':
-
-    unittest.main()
+    unittest2.main()

@@ -9,8 +9,9 @@ class CheckAllServices:
 
     def __init__(self, driver):
         self.driver = driver
+        self.lll = []
 
-    def pressOnEachServices(self):
+    def pressOnEachServices(self, checkSpelling=None):
         services = getAllSubAndMainServices(self.driver)
         findElementByXpath(self.driver, '//span[@data-horizontal-title="Services"]').click()
         for service in services:
@@ -33,7 +34,12 @@ class CheckAllServices:
                 getDataForURL = getTagName(getDataForURL, "h2")
                 addToURL2 = getDataForURL.text.replace(" ", '-')
                 buildURL = f'https://supermelon.com/{addToURL2.lower()}#{addToURL.lower()}'
-                ActionChains(self.driver).key_down(Keys.COMMAND).click(service).perform()
+                if not addToURL2.lower() in self.lll:
+                    ActionChains(self.driver).key_down(Keys.COMMAND).click(service).perform()
+                    self.lll.append(addToURL2.lower())
+                if checkSpelling:
+                    changeWindowAndSwitch(self.driver, 0)
+                    continue
                 window2 = changeWindowAndSwitch(self.driver, 1, service.text)
                 if not window2:
                     error = f'The button:{service.text} was not pressed'

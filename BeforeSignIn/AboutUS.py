@@ -1,9 +1,8 @@
-import logging
 from time import sleep
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.keys import Keys
 from Helpers.Functions import changeWindowAndSwitch, \
-    findElementByXpath, checkIfPopUpAppears
+    findElementByXpath, checkIfPopUpAppears, clickAndOpenNewTab
 
 
 class CheckAboutUs:
@@ -11,16 +10,17 @@ class CheckAboutUs:
     def __init__(self, driver):
         self.driver = driver
 
-    def pressOnAboutUS(self):
-
+    def pressOnAboutUS(self, checkSpelling=None):
         element = findElementByXpath(self.driver, '//span[@data-horizontal-title="About"]')
-        ActionChains(self.driver).key_down(Keys.COMMAND).click(element).perform()
+        clickAndOpenNewTab(self.driver, element)
         errorAbout = f"about page does not appear after press on {element.text}\n the url was {self.driver.current_url}"
-        #sleep(2)
         window = changeWindowAndSwitch(self.driver, 1)
         if not window:
             errorButton = f'The button:{element.text} was not pressed'
             raise Exception(errorButton)
+        if checkSpelling:
+            changeWindowAndSwitch(self.driver, 0)
+            return True
         if self.driver.current_url == "https://supermelon.com/about-us":
             sleep(2)
             startedButton = findElementByXpath(self.driver, '//a[@class="action button cms-signup-link"]')
@@ -31,7 +31,6 @@ class CheckAboutUs:
         else:
             self.driver.execute_script("window.close('');")
             changeWindowAndSwitch(self.driver, 0)
-            logging.error(errorAbout)
-            return False
+            raise Exception(errorAbout)
 
         return True

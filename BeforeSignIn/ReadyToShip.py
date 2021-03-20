@@ -1,4 +1,4 @@
-from Helpers.Functions import findElementByXpath, checkIfPopUpAppears
+from Helpers.Functions import findElementByXpath, checkIfPopUpAppears, clickAndOpenNewTab, changeWindowAndSwitch
 
 
 class CheckReadyToShip:
@@ -6,7 +6,7 @@ class CheckReadyToShip:
     def __init__(self, driver):
         self.driver = driver
 
-    def pressOnReadyToShip(self):
+    def pressOnReadyToShip(self, checkSpelling=None):
         print(self.driver.window_handles)
         element = findElementByXpath(self.driver, '//span[@data-horizontal-title="Ready to Ship"]')
         element.click()
