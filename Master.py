@@ -10,7 +10,6 @@ from BeforeSignIn.AboutUS import CheckAboutUs
 from Helpers.Functions import changeWindowAndSwitch, findElementsByXpath
 from SignInAndOut.LoginToSite import LoginFeature
 from AfterSignIn.UrlAndProducts import CheckAllProducts
-from BeforeSignIn.Spelling import CheckSpellingBeforeSignIn
 import os
 from pyvirtualdisplay import Display
 
