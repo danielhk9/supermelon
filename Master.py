@@ -12,16 +12,21 @@ from SignInAndOut.LoginToSite import LoginFeature
 from AfterSignIn.UrlAndProducts import CheckAllProducts
 from BeforeSignIn.Spelling import CheckSpellingBeforeSignIn
 import os
-
+from pyvirtualdisplay import Display
 
 class InitFlow(unittest2.TestCase):
 
     @classmethod
     def setUpClass(cls):
         print("setUpClass")
+        chrome_options = webdriver.ChromeOptions()
+        chrome_options.add_argument('--no-sandbox')
+        chrome_options.add_argument('--window-size=1420,1080')
+        chrome_options.add_argument('--headless')
+        chrome_options.add_argument('--disable-gpu')
         capabilities = DesiredCapabilities.CHROME
         capabilities["goog:loggingPrefs"] = {"performance": "ALL"}
-        cls.driver = webdriver.Chrome(executable_path=f'{os.getcwd()}/chromedriver', desired_capabilities=capabilities)
+        cls.driver = webdriver.Chrome(executable_path=f'{os.getcwd()}/chromedriver', desired_capabilities=capabilities,chrome_options=chrome_options)
         cls.driver.implicitly_wait(10)
         cls.driver.maximize_window()
         cls.driver.get("https://supermelon.com/")
