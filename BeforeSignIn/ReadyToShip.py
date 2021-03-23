@@ -1,3 +1,5 @@
+from time import sleep
+
 from Helpers.Functions import findElementByXpath, checkIfPopUpAppears, clickAndOpenNewTab, changeWindowAndSwitch
 
 
@@ -7,7 +9,6 @@ class CheckReadyToShip:
         self.driver = driver
 
     def pressOnReadyToShip(self, checkSpelling=None):
-        print(self.driver.window_handles)
         element = findElementByXpath(self.driver, '//span[@data-horizontal-title="Ready to Ship"]')
         element.click()
         if not checkIfPopUpAppears(self.driver, "login"):

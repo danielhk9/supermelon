@@ -13,7 +13,9 @@ class CheckAllProducts:
         self.numberOFTestedProducts = 0
 
     def pressOnEachProduct(self):
-        findElementByXpath(self.driver, '//a[@title="Browse Categories"]').click()
+        browseButton = findElementByXpath(self.driver, '//a[@title="Browse Categories"]')
+        if browseButton:
+            browseButton.click()
         changeWindowAndSwitch(self.driver, 0)
         categories = getAllSubAndMainCategories(self.driver)
         for number, category in enumerate(categories):
@@ -75,7 +77,7 @@ class CheckAllProducts:
                 el = findElementsByXpath(self.driver, f'//li[@class="{className}"]')
                 getTheElement = getTagName(el[numOFElement], "a")
                 url = getTheElement.get_attribute("href")
-                print(f'Product number: {numOFElement}')
+                print(f'Product number: {self.numberOFTestedProducts}')
                 if not 'https://' in url:
                     name = getTagName(el[numOFElement], "strong").text
                     print(f'The url of {name} is:{url}')

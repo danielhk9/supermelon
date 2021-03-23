@@ -7,6 +7,6 @@ def installPackages(pacakge):
 
 
 if __name__ == '__main__':
-    installPackages('unittest')
+    installPackages('unittest2')
     installPackages('selenium')
 

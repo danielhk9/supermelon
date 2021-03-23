@@ -1,3 +1,4 @@
+from time import sleep
 
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.keys import Keys
@@ -9,9 +10,8 @@ class CheckAllServices:
 
     def __init__(self, driver):
         self.driver = driver
-        self.lll = []
 
-    def pressOnEachServices(self, checkSpelling=None):
+    def pressOnEachServices(self):
         services = getAllSubAndMainServices(self.driver)
         findElementByXpath(self.driver, '//span[@data-horizontal-title="Services"]').click()
         for service in services:
@@ -34,12 +34,7 @@ class CheckAllServices:
                 getDataForURL = getTagName(getDataForURL, "h2")
                 addToURL2 = getDataForURL.text.replace(" ", '-')
                 buildURL = f'https://supermelon.com/{addToURL2.lower()}#{addToURL.lower()}'
-                if not addToURL2.lower() in self.lll:
-                    ActionChains(self.driver).key_down(Keys.COMMAND).click(service).perform()
-                    self.lll.append(addToURL2.lower())
-                if checkSpelling:
-                    changeWindowAndSwitch(self.driver, 0)
-                    continue
+                ActionChains(self.driver).key_down(Keys.COMMAND).click(service).perform()
                 window2 = changeWindowAndSwitch(self.driver, 1, service.text)
                 if not window2:
                     error = f'The button:{service.text} was not pressed'
@@ -51,4 +46,5 @@ class CheckAllServices:
                     self.driver.execute_script("window.close('');")
                     changeWindowAndSwitch(self.driver, 0)
                     raise Exception(error)
+                sleep(2)
         return True

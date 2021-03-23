@@ -1,4 +1,4 @@
-
+import logging
 from Helpers.Functions import findElementsByXpath, changeWindowAndSwitch, findElementByXpath, getTagNames, \
     clickAndOpenNewTab
 
@@ -8,10 +8,9 @@ class CheckBlog:
     def __init__(self, driver):
         self.driver = driver
 
-    def pressOnBlog(self, checkSpelling=None):
+    def pressOnBlog(self):
         element = findElementByXpath(self.driver, '//span[@data-horizontal-title="Blog"]')
-        if element:
-            clickAndOpenNewTab(self.driver, element)
+        clickAndOpenNewTab(self.driver, element)
         window = changeWindowAndSwitch(self.driver, 1)
         if not window:
             errorButton = f'The button:{element.text} was not pressed'
@@ -21,8 +20,6 @@ class CheckBlog:
             categories = getTagNames(listCategories, 'li')
             for category in categories:
                 clickAndOpenNewTab(self.driver, category)
-                if checkSpelling:
-                    continue
                 textToSearch = category.text
                 changeWindowAndSwitch(self.driver, 2)
                 posts = findElementsByXpath(self.driver, '//div[@class="item post-categories"]')

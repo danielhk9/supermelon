@@ -1,7 +1,7 @@
 import unittest2
 from selenium import webdriver
 from selenium.webdriver import DesiredCapabilities
-
+import pytest
 from BeforeSignIn.AllCategories import CheckAllCategories
 from BeforeSignIn.AllServices import CheckAllServices
 from BeforeSignIn.Blog import CheckBlog
@@ -12,6 +12,8 @@ from SignInAndOut.LoginToSite import LoginFeature
 from AfterSignIn.UrlAndProducts import CheckAllProducts
 from BeforeSignIn.Spelling import CheckSpellingBeforeSignIn
 import os
+
+
 class InitFlow(unittest2.TestCase):
 
     @classmethod
@@ -19,7 +21,6 @@ class InitFlow(unittest2.TestCase):
         print("setUpClass")
         capabilities = DesiredCapabilities.CHROME
         capabilities["goog:loggingPrefs"] = {"performance": "ALL"}
-        print(os.getcwd())
         cls.driver = webdriver.Chrome(executable_path=f'{os.getcwd()}/chromedriver', desired_capabilities=capabilities)
         cls.driver.implicitly_wait(10)
         cls.driver.maximize_window()
@@ -27,37 +28,32 @@ class InitFlow(unittest2.TestCase):
 
     def testAllCategories(self):
         print("test All Cate")
-        results = CheckAllCategories(self.driver).pressOnEachCategory()
-        self.assertEqual(results, True)
+        assert CheckAllCategories(self.driver).pressOnEachCategory() is True
 
     def testAllServices(self):
         results = CheckAllServices(self.driver).pressOnEachServices()
         self.assertEqual(results, True)
 
     def testReadyToShip(self):
-        results = CheckReadyToShip(self.driver).pressOnReadyToShip()
-        self.assertEqual(results, True)
+        assert CheckReadyToShip(self.driver).pressOnReadyToShip() is True
 
     def testAboutUs(self):
-        results = CheckAboutUs(self.driver).pressOnAboutUS()
-        self.assertEqual(results, True)
+        assert CheckAboutUs(self.driver).pressOnAboutUS() is True
 
     def testBlogScreen(self):
-        results = CheckBlog(self.driver).pressOnBlog()
-        self.assertEqual(results, True)
+        assert CheckBlog(self.driver).pressOnBlog() is True
 
     def loginToSite(self):
-        results = LoginFeature(self.driver).checkLoginInFeature()
-        self.assertEqual(results, True)
+        assert LoginFeature(self.driver).checkLoginInFeature() is True
 
-    def testAllProducts(self):
-        self.loginToSite()
-        results = CheckAllProducts(self.driver).pressOnEachProduct()
-        self.assertEqual(results, True)
-
-    def testSpelling(self):
-        results = CheckSpellingBeforeSignIn(self.driver).getAllText()
-        self.assertEqual(results, True)
+    # def testAllProducts(self):
+    #     self.loginToSite()
+    #     results = CheckAllProducts(self.driver).pressOnEachProduct()
+    #     self.assertEqual(results, True)
+    #
+    # def testSpelling(self):
+    #     results = CheckSpellingBeforeSignIn(self.driver).getAllText()
+    #     self.assertEqual(results, True)
 
     def tearDown(self):
         while True:
