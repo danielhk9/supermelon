@@ -21,7 +21,7 @@ class InitFlow(unittest2.TestCase):
         print("setUpClass")
         capabilities = DesiredCapabilities.CHROME
         capabilities["goog:loggingPrefs"] = {"performance": "ALL"}
-        cls.driver = webdriver.Chrome(executable_path=f'{os.getcwd()}/chromedriver', desired_capabilities=capabilities, options=options)
+        cls.driver = webdriver.Chrome(executable_path=f'{os.getcwd()}/chromedriver', desired_capabilities=capabilities)
         cls.driver.implicitly_wait(10)
         cls.driver.maximize_window()
         cls.driver.get("https://supermelon.com/")
