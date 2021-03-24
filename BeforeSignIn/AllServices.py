@@ -3,7 +3,8 @@ from time import sleep
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.keys import Keys
 
-from Helpers.Functions import findElementByXpath, getAllSubAndMainServices, changeWindowAndSwitch, getTagName
+from Helpers.Functions import findElementByXpath, getAllSubAndMainServices, changeWindowAndSwitch, getTagName, \
+    clickAndOpenNewTab
 
 
 class CheckAllServices:
@@ -34,7 +35,7 @@ class CheckAllServices:
                 getDataForURL = getTagName(getDataForURL, "h2")
                 addToURL2 = getDataForURL.text.replace(" ", '-')
                 buildURL = f'https://supermelon.com/{addToURL2.lower()}#{addToURL.lower()}'
-                ActionChains(self.driver).key_down(Keys.COMMAND).click(service).perform()
+                clickAndOpenNewTab(self.driver, service)
                 window2 = changeWindowAndSwitch(self.driver, 1, service.text)
                 if not window2:
                     error = f'The button:{service.text} was not pressed'

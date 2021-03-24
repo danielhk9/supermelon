@@ -95,7 +95,7 @@ def changeWindowAndSwitch(driver, num, text=None):
 
 
 def clickAndOpenNewTab(driver, element):
-    ActionChains(driver).key_down(Keys.COMMAND).click(element).perform()
+    ActionChains(driver).key_down(Keys.CONTROL).click(element).perform()
     print(f'The "{element.text}" element is pressed')
 
 def checkIfPopUpAppears(driver, popup, exitFromPopUp=None):

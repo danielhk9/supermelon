@@ -5,7 +5,7 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.common.keys import Keys
 
 from Helpers.Functions import findElementsByXpath, findElementByClassName, changeWindowAndSwitch, getTagName, \
-    findElementByXpath, checkIfPopUpAppears
+    findElementByXpath, checkIfPopUpAppears, clickAndOpenNewTab
 
 
 class CheckAboutUs:
@@ -15,9 +15,12 @@ class CheckAboutUs:
 
     def pressOnAboutUS(self):
         element = findElementByXpath(self.driver, '//span[@data-horizontal-title="About"]')
-        ActionChains(self.driver).key_down(Keys.COMMAND).click(element).perform()
+
+        # ActionChains(self.driver).key_down(Keys.COMMAND).click(element).perform()
+        clickAndOpenNewTab(self.driver, element)
         errorAbout = f"about page does not appear after press on {element.text}\n the url was {self.driver.current_url}"
         window = changeWindowAndSwitch(self.driver, 1)
+        sleep(20)
         if not window:
             errorButton = f'The button:{element.text} was not pressed'
             raise Exception(errorButton)
