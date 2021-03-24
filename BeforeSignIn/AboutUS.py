@@ -14,7 +14,6 @@ class CheckAboutUs:
         self.driver = driver
 
     def pressOnAboutUS(self):
-
         element = findElementByXpath(self.driver, '//span[@data-horizontal-title="About"]')
         ActionChains(self.driver).key_down(Keys.COMMAND).click(element).perform()
         errorAbout = f"about page does not appear after press on {element.text}\n the url was {self.driver.current_url}"

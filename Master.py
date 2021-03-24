@@ -1,9 +1,7 @@
-from time import sleep
 
 import unittest2
 from selenium import webdriver
 from selenium.webdriver import DesiredCapabilities
-import pytest
 from BeforeSignIn.AllCategories import CheckAllCategories
 from BeforeSignIn.AllServices import CheckAllServices
 from BeforeSignIn.Blog import CheckBlog
@@ -28,23 +26,28 @@ class InitFlow(unittest2.TestCase):
 
     def testAllCategories(self):
         print("test All Cate")
-        assert CheckAllCategories(self.driver).pressOnEachCategory() is True
+        results = CheckAllCategories(self.driver).pressOnEachCategory()
+        self.assertEqual(results, True)
 
     def testAllServices(self):
         results = CheckAllServices(self.driver).pressOnEachServices()
         self.assertEqual(results, True)
 
     def testReadyToShip(self):
-        assert CheckReadyToShip(self.driver).pressOnReadyToShip() is True
+        results = CheckReadyToShip(self.driver).pressOnReadyToShip()
+        self.assertEqual(results, True)
 
     def testAboutUs(self):
-        assert CheckAboutUs(self.driver).pressOnAboutUS() is True
+        results = CheckAboutUs(self.driver).pressOnAboutUS()
+        self.assertEqual(results, True)
 
     def testBlogScreen(self):
-        assert CheckBlog(self.driver).pressOnBlog() is True
+        results = CheckBlog(self.driver).pressOnBlog()
+        self.assertEqual(results, True)
 
     def loginToSite(self):
-        assert LoginFeature(self.driver).checkLoginInFeature() is True
+        results = LoginFeature(self.driver).checkLoginInFeature()
+        self.assertEqual(results, True)
 
     # def testAllProducts(self):
     #     self.loginToSite()
