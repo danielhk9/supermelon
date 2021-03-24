@@ -2,6 +2,8 @@
 import unittest2
 from selenium import webdriver
 from selenium.webdriver import DesiredCapabilities
+from selenium.webdriver.chrome.options import Options
+
 from BeforeSignIn.AllCategories import CheckAllCategories
 from BeforeSignIn.AllServices import CheckAllServices
 from BeforeSignIn.Blog import CheckBlog
@@ -17,9 +19,11 @@ class InitFlow(unittest2.TestCase):
     @classmethod
     def setUpClass(cls):
         print("setUpClass")
+        options = Options()
+        options.headless = False
         capabilities = DesiredCapabilities.CHROME
         capabilities["goog:loggingPrefs"] = {"performance": "ALL"}
-        cls.driver = webdriver.Chrome(executable_path=f'{os.getcwd()}/chromedriver', desired_capabilities=capabilities)
+        cls.driver = webdriver.Chrome(executable_path=f'{os.getcwd()}/chromedriver', desired_capabilities=capabilities, options=options)
         cls.driver.implicitly_wait(10)
         cls.driver.maximize_window()
         cls.driver.get("https://supermelon.com/")
