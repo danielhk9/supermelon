@@ -25,7 +25,7 @@ class InitFlow(unittest2.TestCase):
         cls.driver.get("https://supermelon.com/")
 
     def testAllCategories(self):
-        print("test All Cate")
+        print("test All Categories")
         results = CheckAllCategories(self.driver).pressOnEachCategory()
         self.assertEqual(results, True)
 
