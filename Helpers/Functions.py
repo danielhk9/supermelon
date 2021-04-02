@@ -1,5 +1,5 @@
-from time import sleep
-
+import os
+import xlsxwriter
 from selenium.common.exceptions import ElementNotInteractableException, NoSuchElementException
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.keys import Keys
@@ -8,6 +8,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
+import xlrd
 
 
 def getAllSubAndMainCategories(driver):
@@ -29,9 +30,21 @@ def getTagNames(driver, tagName):
     return element
 
 
+def createExcelFile(fileName, sheetName, detect):
+    wb = xlsxwriter.Workbook(fileName)
+    ws = wb.add_worksheet(sheetName)
+    bold = wb.add_format({'bold': 1})
+    ws.write('A1', 'Product ID', bold)
+    ws.write('B1', 'Image Name', bold)
+    ws.write('C1', detect, bold)
+    ws.write('D1', 'Image URL', bold)
+    return [wb, ws]
+
+
 def getTagName(driver, tagName):
     element = driver.find_element_by_tag_name(tagName)
     return element
+
 
 def waitToThePageToLoad(driver):
     delay = 5
@@ -40,6 +53,7 @@ def waitToThePageToLoad(driver):
         return True
     except TimeoutException:
         return False
+
 
 def focusOnMainCategory(driver, category):
     className = category.get_attribute("class")
@@ -63,7 +77,7 @@ def findElementByClassName(driver, className):
 
 
 def findElementByXpath(driver, xpath):
-    #example -  '//span[@class="sm_megamenu_title_link"]
+    # example -  '//span[@class="sm_megamenu_title_link"]
     try:
         element = driver.find_element_by_xpath(xpath)
         return element
@@ -95,8 +109,9 @@ def changeWindowAndSwitch(driver, num, text=None):
 
 
 def clickAndOpenNewTab(driver, element):
-    ActionChains(driver).key_down(Keys.CONTROL).click(element).perform()
+    ActionChains(driver).key_down(Keys.COMMAND).click(element).perform()
     print(f'The "{element.text}" element is pressed')
+
 
 def checkIfPopUpAppears(driver, popup, exitFromPopUp=None):
     driver.switch_to.parent_frame()
