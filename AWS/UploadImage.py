@@ -25,8 +25,8 @@ def imageToAWS():
     clientS3 = boto3.client('s3', aws_access_key_id=keys[0], aws_secret_access_key=keys[1])
     clientRekognition = boto3.client('rekognition',  region_name='us-east-2', aws_access_key_id=keys[0], aws_secret_access_key=keys[1])
     images = getAllImages()
-    # try:
-    for productID, allImages in images.items():
+    try:
+        for productID, allImages in images.items():
             s += 1
             print(s)
             for image in allImages:
@@ -50,14 +50,14 @@ def imageToAWS():
                 deleteTheImage(imagePath)
                 if s == 600:
                     break
-    # except Exception as e:
-    #     print(e)
-    #     print('finished')
-    # finally:
-    #     print('save the files')
-    #     textWb.close()
-    #     labelWb.close()
-    #     sizeWb.close()
+    except Exception as e:
+        print(e)
+        print('finished')
+    finally:
+        print('save the files')
+        textWb.close()
+        labelWb.close()
+        sizeWb.close()
 
 
 def writeToExecl(ws, detect, imageName, productID, imageURL, num):
