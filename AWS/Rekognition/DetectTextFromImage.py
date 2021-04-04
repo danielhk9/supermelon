@@ -6,7 +6,7 @@ def detectText(clientRekognition, imageName):
                       "com", "baba", "@", "www",
                       ".en", "..", ".,","abb","bala"]
     try:
-        respond = clientRekognition.detect_text(Image={'S3Object': {'Bucket': "mysuper", "Name": imageName}})
+        respond = clientRekognition.detect_text(Image={'S3Object': {'Bucket': "supermelonbucket", "Name": imageName}})
     except botocore.exceptions.ClientError as e:
         return 'Image not exits'
     for num in range(len(respond["TextDetections"])):
