@@ -27,9 +27,9 @@ def imageToAWS():
     images = getAllImages()
     try:
         for productID, allImages in images.items():
-            s += 1
-            print(s)
             for image in allImages:
+                s += 1
+                print(s)
                 imageURL = f"https://supermelon.com/media/catalog/product/{image}"
                 imageName = image.split('/')[-1]
                 imagePath = saveTheImage(imageURL, imageName)
@@ -48,7 +48,7 @@ def imageToAWS():
                 if size:
                     startNumOfSize = writeToExecl(sizeWs, size, imageName, productID, imageURL, startNumOfSize)
                 deleteTheImage(imagePath)
-                if s == 600:
+                if s == 1000:
                     break
     except Exception as e:
         print(e)
