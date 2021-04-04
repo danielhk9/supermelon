@@ -33,7 +33,7 @@ def imageToAWS():
                 imageURL = f"https://supermelon.com/media/catalog/product/{image}"
                 imageName = image.split('/')[-1]
                 imagePath = saveTheImage(imageURL, imageName)
-                clientS3.upload_file(imagePath, "mysuper", imageName)
+                clientS3.upload_file(imagePath, "supermelonbucket", imageName)
                 text = detectText(clientRekognition, imageName)
                 if text:
                     startNumOfText = writeToExecl(textWs, text, imageName, productID, imageURL, startNumOfText)
