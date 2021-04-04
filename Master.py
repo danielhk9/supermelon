@@ -5,7 +5,7 @@ from selenium.webdriver import DesiredCapabilities
 from selenium.webdriver.chrome.options import Options
 
 from AWS.Rekognition.DetectLabelsFromImage import detectLabel
-from AWS.Rekognition.ImageFunctions import getImageSize, getUnavailableImages, getSizeAndUnavailable
+#from AWS.Rekognition.ImageFunctions import getImageSize, getUnavailableImages, getSizeAndUnavailable
 
 from AWS.UploadImage import imageToAWS
 from AfterSignIn.UrlAndProducts import CheckAllProducts
