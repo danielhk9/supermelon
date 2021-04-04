@@ -5,10 +5,10 @@ def detectText(clientRekognition, imageName):
                       'coom', '.co', 'babo', 'bobo',
                       "com", "baba", "@", "www",
                       ".en", "..", ".,","abb","bala"]
-    # try:
-    respond = clientRekognition.detect_text(Image={'S3Object': {'Bucket': "supermelonbucket", "Name": imageName}})
-    # except botocore.exceptions.ClientError as e:
-    #     return 'Image not exits'
+    try:
+        respond = clientRekognition.detect_text(Image={'S3Object': {'Bucket': "supermelonbucket", "Name": imageName}})
+    except botocore.exceptions.ClientError as e:
+        return 'Image not exits'
     for num in range(len(respond["TextDetections"])):
         text = respond["TextDetections"][num]["DetectedText"].lower()
         match = [string for string in stringToSearch if string.lower() in text]
