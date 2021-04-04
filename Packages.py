@@ -16,7 +16,7 @@ if __name__ == '__main__':
     installPackages("ci-info == 0.2.0")
     installPackages("click == 7.1.2")
     installPackages("colordict == 1.2.4")
-    installPackages("config-obj == 5.0.6")
+    installPackages("configobj == 5.0.6")
     installPackages("configparser == 5.0.2")
     installPackages("decorator == 4.4.2")
     installPackages("EasyProcess == 0.3")
