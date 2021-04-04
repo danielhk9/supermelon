@@ -20,21 +20,20 @@ def imageToAWS():
     startNumOfText = 2
     startNumOfLabel = 2
     startNumOfSize = 2
-    with open(f'{os.getcwd()}/Files/awsKeys.csv') as code:
+    with open(f'{os.getcwd()}/Files/awsKeys') as code:
         keys = code.readline().split(",")
     clientS3 = boto3.client('s3', aws_access_key_id=keys[0], aws_secret_access_key=keys[1])
-    print(f"aws_access_key_id = {keys[0]}")
-    print(f"aws_secret_access_key = {keys[1]}")
     clientRekognition = boto3.client('rekognition',  region_name='us-east-2', aws_access_key_id=keys[0], aws_secret_access_key=keys[1])
     images = getAllImages()
-    try:
-        for productID, allImages in images.items():
+    # try:
+    for productID, allImages in images.items():
             s += 1
             print(s)
             for image in allImages:
                 imageURL = f"https://supermelon.com/media/catalog/product/{image}"
                 imageName = image.split('/')[-1]
                 imagePath = saveTheImage(imageURL, imageName)
+                print(imagePath)
                 clientS3.upload_file(imagePath, "supermelonbucket", imageName)
                 text = detectText(clientRekognition, imageName)
                 if text:
@@ -51,14 +50,14 @@ def imageToAWS():
                 deleteTheImage(imagePath)
                 if s == 600:
                     break
-    except Exception as e:
-        print(e)
-        print('finished')
-    finally:
-        print('save the files')
-        textWb.close()
-        labelWb.close()
-        sizeWb.close()
+    # except Exception as e:
+    #     print(e)
+    #     print('finished')
+    # finally:
+    #     print('save the files')
+    #     textWb.close()
+    #     labelWb.close()
+    #     sizeWb.close()
 
 
 def writeToExecl(ws, detect, imageName, productID, imageURL, num):
