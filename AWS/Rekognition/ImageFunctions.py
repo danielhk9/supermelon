@@ -1,42 +1,24 @@
-from collections import Counter
 
 import PIL.Image
 import cv2
-import requests
 from pytesseract import pytesseract
 import os
-
+from datetime import datetime
 from Helpers.Functions import createExcelFile
-import shutil
-
 import requests
 
 
-def getSizeAndUnavailable():
-    images = getAllImages()
-    for image in images:
-        if not image == '':
-            productName = image.split(",")[0]
-            imageName = image.split(",")[1]
-            imageURL = f"https://supermelon.com/media/catalog/product{imageName}"
-            # imagePath = saveTheImage(imageURL, imageName)
-            # getUnavailableImages(imagePath)
-            # getImageSize(imagePath)
-            # deleteTheImage(imagePath)
 
-
-def getImageSize(imagePath, productID, imageName, imageURL, ws1, num):
+def getImageSize(imagePath):
     image = PIL.Image.open(imagePath)
     width, height = image.size
     if 250 > width and 250 > height:
-        print(f'The size of {imageName} image is less the 250')
-        ws1.write(f'A{num}', productID)
-        ws1.write(f'B{num}', imageName)
-        ws1.write(f'C{num}', f"{width, height}")
-        ws1.write(f'D{num}', imageURL)
-        num += 1
+        image.close()
+        size = f"{width, height}"
+        return size
     image.close()
-    return num
+    return False
+
 
 
 
@@ -54,14 +36,12 @@ def getUnavailableImages():
     try:
         for productID, allImages in images.items():
             s += 1
-            print(s)
-            if 6147 > s:
-                print(s)
+            if 41277 > s:
                 continue
             for image in allImages:
                 imageURL = f"https://supermelon.com/media/catalog/product/{image}"
                 imageName = image.split("/")[-1]
-                imagePath = saveTheImage(imageURL, imageName)
+                imagePath = saveTheImage(imageURL, "imageName")
                 img = cv2.imread(imagePath)
                 try:
                     text = pytesseract.image_to_string(img)
@@ -80,6 +60,7 @@ def getUnavailableImages():
                     ws.write(f'C{startNum}', text)
                     ws.write(f'D{startNum}', imageURL)
                     startNum += 1
+                print(datetime.utcnow().isoformat(sep=' ', timespec='milliseconds'))
                 newNum = getImageSize(imagePath, productID, imageName, imageURL, ws1, num)
                 num = newNum
                 deleteTheImage(imagePath)
@@ -97,8 +78,8 @@ def getUnavailableImages():
 
 def getAllImages():
     images = {}
-    with open(f'{os.getcwd()}/Files/ImagesName.csv') as names:
-        names = names.read().splitlines()
+    with open(f'{os.getcwd()}/Files/ImagesName.csv') as file:
+        names = file.read().splitlines()
     for name in names:
         if not name == '':
             productName = name.split(",")[0]
@@ -112,8 +93,8 @@ def getAllImages():
                 images.update({productName: imageName})
             else:
                 images.update({productName: [imageName]})
+    file.close()
     return images
-
 
 def saveTheImage(imageURL, imageName):
     downloadTheImage = requests.get(imageURL)
