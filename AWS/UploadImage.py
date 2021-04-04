@@ -50,6 +50,7 @@ def imageToAWS():
                 deleteTheImage(imagePath)
                 if s == 1000:
                     break
+
     except Exception as e:
         print(e)
         print('finished')
