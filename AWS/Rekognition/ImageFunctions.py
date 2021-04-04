@@ -12,7 +12,7 @@ import requests
 def getImageSize(imagePath):
     image = PIL.Image.open(imagePath)
     width, height = image.size
-    if 250 > width and 250 > height:
+    if 150 > width and 150 > height:
         image.close()
         size = f"{width, height}"
         return size
