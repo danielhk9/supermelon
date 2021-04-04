@@ -43,10 +43,9 @@ def imageToAWS():
                 label = detectLabel(clientRekognition, imageName)
                 if label:
                     startNumOfLabel = writeToExecl(labelWs, label, imageName, productID, imageURL, startNumOfLabel)
-                if s > 41277:
-                    size = getImageSize(imagePath)
-                    if size:
-                        startNumOfSize = writeToExecl(sizeWs, size, imageName, productID, imageURL, startNumOfSize)
+                size = getImageSize(imagePath)
+                if size:
+                    startNumOfSize = writeToExecl(sizeWs, size, imageName, productID, imageURL, startNumOfSize)
                 deleteTheImage(imagePath)
     except Exception as e:
         print(e)
