@@ -1,6 +1,5 @@
 import boto3
-import cv2
-from pytesseract import pytesseract
+import os
 from AWS.Rekognition.ImageFunctions import saveTheImage, getAllImages, deleteTheImage, getImageSize
 from AWS.Rekognition.DetectTextFromImage import detectText
 from AWS.Rekognition.DetectLabelsFromImage import detectLabel
@@ -21,7 +20,7 @@ def imageToAWS():
     startNumOfText = 2
     startNumOfLabel = 2
     startNumOfSize = 2
-    with open(f'/Users/danielh/PycharmProjects/SuperMelon/Files/awsKeys') as code:
+    with open(f'{os.getcwd()}/Files/awsKeys.csv') as code:
         keys = code.readline().split(",")
     clientS3 = boto3.client('s3', aws_access_key_id=keys[0], aws_secret_access_key=keys[1])
     clientRekognition = boto3.client('rekognition', aws_access_key_id=keys[0], aws_secret_access_key=keys[1])
