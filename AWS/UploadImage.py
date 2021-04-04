@@ -23,6 +23,8 @@ def imageToAWS():
     with open(f'{os.getcwd()}/Files/awsKeys.csv') as code:
         keys = code.readline().split(",")
     clientS3 = boto3.client('s3', aws_access_key_id=keys[0], aws_secret_access_key=keys[1])
+    print(f"aws_access_key_id = {keys[0]}")
+    print(f"aws_secret_access_key = {keys[1]}")
     clientRekognition = boto3.client('rekognition',  region_name='us-east-2', aws_access_key_id=keys[0], aws_secret_access_key=keys[1])
     images = getAllImages()
     try:
