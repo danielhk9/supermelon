@@ -40,9 +40,9 @@ def imageToAWS():
                     if text == "Image not exits" or text == 'no image available':
                         deleteTheImage(imagePath)
                         continue
-                label = detectLabel(clientRekognition, imageName)
-                if label:
-                    startNumOfLabel = writeToExecl(labelWs, label, imageName, productID, imageURL, startNumOfLabel)
+                # label = detectLabel(clientRekognition, imageName)
+                # if label:
+                #     startNumOfLabel = writeToExecl(labelWs, label, imageName, productID, imageURL, startNumOfLabel)
                 size = getImageSize(imagePath)
                 if size:
                     startNumOfSize = writeToExecl(sizeWs, size, imageName, productID, imageURL, startNumOfSize)
