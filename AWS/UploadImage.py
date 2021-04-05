@@ -48,7 +48,7 @@ def imageToAWS():
                 if size:
                     startNumOfSize = writeToExecl(sizeWs, size, imageName, productID, imageURL, startNumOfSize)
                 deleteTheImage(imagePath)
-                if s == 1000:
+                if s == 2:
                     break
 
     except Exception as e:
