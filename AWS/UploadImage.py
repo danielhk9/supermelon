@@ -24,16 +24,18 @@ def imageToAWS():
         keys = code.readline().split(",")
     clientS3 = boto3.client('s3', aws_access_key_id=keys[0], aws_secret_access_key=keys[1])
     clientRekognition = boto3.client('rekognition',  region_name='us-east-2', aws_access_key_id=keys[0], aws_secret_access_key=keys[1])
+    stop = False
     images = getAllImages()
     try:
         for productID, allImages in images.items():
+            if stop:
+                break
             for image in allImages:
                 s += 1
                 print(s)
                 imageURL = f"https://supermelon.com/media/catalog/product/{image}"
                 imageName = image.split('/')[-1]
                 imagePath = saveTheImage(imageURL, imageName)
-                print(imagePath)
                 clientS3.upload_file(imagePath, "supermelonbucket", imageName)
                 text = detectText(clientRekognition, imageName)
                 if text:
@@ -48,8 +50,12 @@ def imageToAWS():
                 if size:
                     startNumOfSize = writeToExecl(sizeWs, size, imageName, productID, imageURL, startNumOfSize)
                 deleteTheImage(imagePath)
-                if s == 2:
+                if s == 1000:
+                    stop = True
                     break
+
+
+
 
     except Exception as e:
         print(e)
