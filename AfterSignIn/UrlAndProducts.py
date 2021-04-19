@@ -48,6 +48,8 @@ class CheckAllProducts:
             self.driver.switch_to.window(self.driver.window_handles[-1])
             self.driver.execute_script("window.close('');")
             self.driver.switch_to.window(self.driver.window_handles[0])
+            url = url.replace(f'?p={str(num)}', "")
+
 
     def clickOnItem(self,num):
         element = findElementByXpath(self.driver, '//ol[@class="products list items product-items"]')
