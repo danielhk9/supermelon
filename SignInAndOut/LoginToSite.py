@@ -11,6 +11,7 @@ class LoginFeature:
     def checkLoginInFeature(self):
         findElementByXpath(self.driver, '//a[@class="not-logged-in tg-click"]').click()
         if checkIfPopUpAppears(self.driver, 'login', exitFromPopUp=True):
+            findElementByXpath(self.driver, '//input[@title="Email"]').clear()
             findElementByXpath(self.driver, '//input[@title="Email"]').send_keys("cm@supermelon.com")
             findElementByXpath(self.driver, '//input[@title="Password"]').send_keys("cm@123456")
             findElementByXpath(self.driver, '//a[@class="action login primary"]').click()
