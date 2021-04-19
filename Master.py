@@ -31,26 +31,26 @@ class InitFlow(unittest2.TestCase):
         cls.driver.maximize_window()
         cls.driver.get("https://supermelon.com/")
 
-    def testAllCategories(self):
-        print("test All Categories")
-        results = CheckAllCategories(self.driver).pressOnEachCategory()
-        self.assertEqual(results, True)
-
-    def testAllServices(self):
-        results = CheckAllServices(self.driver).pressOnEachServices()
-        self.assertEqual(results, True)
-
-    def testReadyToShip(self):
-        results = CheckReadyToShip(self.driver).pressOnReadyToShip()
-        self.assertEqual(results, True)
-
-    def testAboutUs(self):
-        results = CheckAboutUs(self.driver).pressOnAboutUS()
-        self.assertEqual(results, True)
-
-    def testBlogScreen(self):
-        results = CheckBlog(self.driver).pressOnBlog()
-        self.assertEqual(results, True)
+    # def testAllCategories(self):
+    #     print("test All Categories")
+    #     results = CheckAllCategories(self.driver).pressOnEachCategory()
+    #     self.assertEqual(results, True)
+    #
+    # def testAllServices(self):
+    #     results = CheckAllServices(self.driver).pressOnEachServices()
+    #     self.assertEqual(results, True)
+    #
+    # def testReadyToShip(self):
+    #     results = CheckReadyToShip(self.driver).pressOnReadyToShip()
+    #     self.assertEqual(results, True)
+    #
+    # def testAboutUs(self):
+    #     results = CheckAboutUs(self.driver).pressOnAboutUS()
+    #     self.assertEqual(results, True)
+    #
+    # def testBlogScreen(self):
+    #     results = CheckBlog(self.driver).pressOnBlog()
+    #     self.assertEqual(results, True)
 
     def loginToSite(self):
         results = LoginFeature(self.driver).checkLoginInFeature()
@@ -65,11 +65,11 @@ class InitFlow(unittest2.TestCase):
         print(f'Finished in {t2 - t1} seconds')
         self.assertEqual(results, True)
 
-
-    def testSpelling(self):
-        results = CheckSpellingBeforeSignIn(self.driver).getAllText()
-        self.assertEqual(results, True)
-
+    #
+    # def testSpelling(self):
+    #     results = CheckSpellingBeforeSignIn(self.driver).getAllText()
+    #     self.assertEqual(results, True)
+    #
 
     def tearDown(self):
         while True:

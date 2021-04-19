@@ -44,12 +44,12 @@ class CheckAllProducts:
             url = url.replace(url, f'{url}?p={str(num)}')
             self.driver.execute_script(f'''window.open("{url}","_blank");''')
             self.driver.switch_to.window(self.driver.window_handles[-1])
-            self.clickOnItem()
+            self.clickOnItem(num)
             self.driver.switch_to.window(self.driver.window_handles[-1])
             self.driver.execute_script("window.close('');")
             self.driver.switch_to.window(self.driver.window_handles[0])
 
-    def clickOnItem(self):
+    def clickOnItem(self,num):
         element = findElementByXpath(self.driver, '//ol[@class="products list items product-items"]')
         elements = getTagNames(element, "li")
         el = findElementsByXpath(self.driver, '//div[@class="productLbl"]')
@@ -62,7 +62,7 @@ class CheckAllProducts:
                 for image in imagesParent:
                     sumImage = getTagName(image, "a")
                     imageURL = sumImage.get_attribute("href")
-                    os.system(f"echo {imageURL} >> /Users/danielh/PycharmProjects/SuperMelon/allURLS.txt")
+                    os.system(f"echo {imageURL}, {str(num)} >> /Users/danielh/PycharmProjects/SuperMelon/allURLS.txt")
                 self.driver.execute_script(f'''window.close();''')
 
     def process_image(self, element, el):
@@ -71,5 +71,4 @@ class CheckAllProducts:
             getTheElement = getTagName(element, "a")
             url = getTheElement.get_attribute("href")
             self.pages +=1
-            print(self.pages)
             self.driver.execute_script(f'''window.open("{url}","_blank");''')
