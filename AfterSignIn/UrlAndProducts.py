@@ -26,6 +26,8 @@ class CheckAllProducts:
             else:
                 subCategories = findElementsByXpath(category, '//span[@class="sm_megamenu_title_lv-2"]')
             for number2, subCategory in enumerate(subCategories):
+                if number2 == 0:
+                    continue
                 getParentElement = findElementByXpath(subCategory, "..")
                 url = getParentElement.get_attribute("href")
                 if url == "javascript:void(0)":
@@ -35,7 +37,6 @@ class CheckAllProducts:
                     self.pressOnEachProduct()
                     self.restartFunction += 1
                 self.switchAndClose(url)
-                break
         return True
 
     def switchAndClose(self, url):

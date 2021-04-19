@@ -58,7 +58,7 @@ class InitFlow(unittest2.TestCase):
 
     def testAllProducts(self):
         t1 = time.perf_counter()
-        self.loginToSite()
+        #self.loginToSite()
         results = CheckAllProducts(self.driver).pressOnEachProduct()
         t2 = time.perf_counter()
         print(f'Finished in {t2 - t1} seconds')
