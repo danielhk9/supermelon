@@ -10,7 +10,6 @@ from BeforeSignIn.AllServices import CheckAllServices
 from BeforeSignIn.Blog import CheckBlog
 from BeforeSignIn.ReadyToShip import CheckReadyToShip
 from BeforeSignIn.AboutUS import CheckAboutUs
-from BeforeSignIn.Spelling import CheckSpellingBeforeSignIn
 from Helpers.Functions import changeWindowAndSwitch
 from SignInAndOut.LoginToSite import LoginFeature
 import os
