@@ -1,7 +1,10 @@
+import concurrent.futures
+import time
 from time import sleep
-from selenium.common.exceptions import NoSuchElementException
+import os
+
 from Helpers.Functions import getAllSubAndMainCategories, findElementByXpath, findElementsByXpath, clickAndOpenNewTab, \
-    getTagName, changeWindowAndSwitch, getTagNames
+    getTagName, changeWindowAndSwitch, getTagNames, getAllSubAndMainReadyTOShip, focusOnMainCategory, getTagNameEX
 
 
 class CheckAllProducts:
@@ -9,18 +12,15 @@ class CheckAllProducts:
     def __init__(self, driver):
         self.driver = driver
         self.restartFunction = 0
-        self.pages = []
+        self.pages = 0
         self.numberOFTestedProducts = 0
 
     def pressOnEachProduct(self):
-        browseButton = findElementByXpath(self.driver, '//a[@title="Browse Categories"]')
-        if browseButton:
-            browseButton.click()
+        os.system("touch allURLS.txt")
         changeWindowAndSwitch(self.driver, 0)
         categories = getAllSubAndMainCategories(self.driver)
         for number, category in enumerate(categories):
-            categoryName = category.get_attribute("class").split(" ")[0]
-            print(f'Testing products on "{categoryName}" category')
+            print(category.get_attribute("class"))
             if "popularcategories" in category.get_attribute("class"):
                 subCategories = findElementsByXpath(category, '//span[@class="sm_megamenu_title_link"]')
             else:
@@ -35,53 +35,41 @@ class CheckAllProducts:
                     self.pressOnEachProduct()
                     self.restartFunction += 1
                 self.switchAndClose(url)
+                break
         return True
 
     def switchAndClose(self, url):
-        self.driver.execute_script(f'''window.open("{url}","_blank");''')
-        self.driver.switch_to.window(self.driver.window_handles[-1])
-        self.getAllUrlPages()
-        self.clickOnItem()
-        self.driver.execute_script("window.close('');")
-        self.driver.switch_to.window(self.driver.window_handles[0])
-        self.pages.clear()
-
-    def getAllUrlPages(self, checkSpelling=None):
-        elementPages = findElementByXpath(self.driver, '//ul[@class="items pages-items"]')
-        if not elementPages:
-            self.pages.insert(0, "current")
-            return self.pages
-        pages = getTagNames(elementPages, "li")
-        for page in pages:
-            try:
-                url = getTagName(page, "a")
-                url = url.get_attribute("href")
-                if not url in self.pages:
-                    self.pages.append(url)
-                else:
-                    continue
-            except NoSuchElementException:
-                self.pages.insert(0, "current")
-        return self.pages
+        for num in range(10, 61):
+            print(f"page number {num}")
+            url = url.replace(url, f'{url}?p={str(num)}')
+            self.driver.execute_script(f'''window.open("{url}","_blank");''')
+            self.driver.switch_to.window(self.driver.window_handles[-1])
+            self.clickOnItem()
+            self.driver.switch_to.window(self.driver.window_handles[-1])
+            self.driver.execute_script("window.close('');")
+            self.driver.switch_to.window(self.driver.window_handles[0])
 
     def clickOnItem(self):
-        for pageNumber, page in enumerate(self.pages):
-            if not pageNumber == 0:
-                self.driver.get(page)
-            element = findElementByXpath(self.driver, '//ol[@class="products list items product-items"]')
-            elements = getTagNames(element, "li")
-            className = elements[0].get_attribute("class")
-            for numOFElement, element in enumerate(elements):
-                self.numberOFTestedProducts += 1
-                print(self.numberOFTestedProducts)
-                el = findElementsByXpath(self.driver, f'//li[@class="{className}"]')
-                getTheElement = getTagName(el[numOFElement], "a")
-                url = getTheElement.get_attribute("href")
-                print(f'Product number: {self.numberOFTestedProducts}')
-                if not 'https://' in url:
-                    name = getTagName(el[numOFElement], "strong").text
-                    print(f'The url of {name} is:{url}')
-                    continue
-                print(url)
-                self.driver.get(url)
-                self.driver.back()
+        element = findElementByXpath(self.driver, '//ol[@class="products list items product-items"]')
+        elements = getTagNames(element, "li")
+        el = findElementsByXpath(self.driver, '//div[@class="productLbl"]')
+        with concurrent.futures.ThreadPoolExecutor() as executor:
+            executor.map(self.process_image, elements, el)
+        for numberWin, window in enumerate(self.driver.window_handles):
+            if numberWin > 1:
+                self.driver.switch_to.window(window)
+                imagesParent = findElementsByXpath(self.driver, '//div[@class="mcs-item"]')
+                for image in imagesParent:
+                    sumImage = getTagName(image, "a")
+                    imageURL = sumImage.get_attribute("href")
+                    os.system(f"echo {imageURL} >> /Users/danielh/PycharmProjects/SuperMelon/allURLS.txt")
+                self.driver.execute_script(f'''window.close();''')
+
+    def process_image(self, element, el):
+        self.numberOFTestedProducts += 1
+        if el.text == "":
+            getTheElement = getTagName(element, "a")
+            url = getTheElement.get_attribute("href")
+            self.pages +=1
+            print(self.pages)
+            self.driver.execute_script(f'''window.open("{url}","_blank");''')

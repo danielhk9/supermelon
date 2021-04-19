@@ -1,4 +1,7 @@
-import os
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import xlsxwriter
 from selenium.common.exceptions import ElementNotInteractableException, NoSuchElementException
 from selenium.webdriver import ActionChains
@@ -7,8 +10,8 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-from selenium.common.exceptions import TimeoutException
-import xlrd
+#from selenium.common.exceptions import TimeoutException
+from timeout import timeout,TimeoutException
 
 
 def getAllSubAndMainCategories(driver):
@@ -16,7 +19,13 @@ def getAllSubAndMainCategories(driver):
                                      '//ul[@class="vertical-type sm-megamenu-hover sm_megamenu_menu sm_megamenu_menu_black"]')
     categories = getTagNames(pCategories, "li")
     return categories
+#products wrapper grid products-grid amscroll-page
 
+def getAllSubAndMainReadyTOShip(driver, element):
+    pCategories = findElementByXpath(driver,
+                                     f'//div[@class="{element}"]')
+    categories = getTagNames(pCategories, "li")
+    return categories
 
 def getAllSubAndMainServices(driver):
     pServices = findElementByXpath(driver,
@@ -40,10 +49,23 @@ def createExcelFile(fileName, sheetName, detect):
     ws.write('D1', 'Image URL', bold)
     return [wb, ws]
 
+@timeout(1)
+def getTagNameEX(driver, tagName):
+    try:
+        element = driver.find_element_by_tag_name(tagName)
+        return element
+    except TimeoutException:
+        return False
 
 def getTagName(driver, tagName):
     element = driver.find_element_by_tag_name(tagName)
     return element
+    #
+    # try:
+    #     element = driver.find_element_by_tag_name(tagName)
+    #     return element
+    # except TimeoutException:
+    #     return False
 
 
 def waitToThePageToLoad(driver):
@@ -86,7 +108,7 @@ def findElementByXpath(driver, xpath):
 
 
 def findElementsByXpath(driver, xpath):
-    ##'//span[@class="sm_megamenu_title_link"]
+    ##'//span[@class="sm_megamenu_title_link"]'
     element = driver.find_elements_by_xpath(xpath)
     return element
 

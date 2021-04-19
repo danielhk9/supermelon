@@ -1,18 +1,16 @@
-
 import PIL.Image
 import cv2
 from pytesseract import pytesseract
 import os
 from datetime import datetime
-from Helpers.Functions import createExcelFile
+#from Helpers.Functions import createExcelFile
 import requests
-
 
 
 def getImageSize(imagePath):
     image = PIL.Image.open(imagePath)
     width, height = image.size
-    if 150 > width and 150 > height:
+    if 700 > width and 700 > height:
         image.close()
         size = f"{width, height}"
         return size
@@ -20,15 +18,13 @@ def getImageSize(imagePath):
     return False
 
 
-
-
 def getUnavailableImages():
-    excelFile = createExcelFile("Unavailable_images.xlsx", "unavailable images", "Detect Text")
-    excelFile2 = createExcelFile("Image_Size.xlsx", "Size", "Size")
-    wb = excelFile[0]
-    ws = excelFile[1]
-    wb1 = excelFile2[0]
-    ws1 = excelFile2[1]
+    #excelFile = createExcelFile("Unavailable_images.xlsx", "unavailable images", "Detect Text")
+    #excelFile2 = createExcelFile("Image_Size.xlsx", "Size", "Size")
+    # wb = excelFile[0]
+    # ws = excelFile[1]
+    # wb1 = excelFile2[0]
+    # ws1 = excelFile2[1]
     startNum = 2
     num = 2
     s = 0
@@ -55,10 +51,10 @@ def getUnavailableImages():
                     continue
                 if "No Image Available" in text:
                     print(f"{imageName} is unavailable")
-                    ws.write(f'A{startNum}', productID)
-                    ws.write(f'B{startNum}', imageName)
-                    ws.write(f'C{startNum}', text)
-                    ws.write(f'D{startNum}', imageURL)
+                    # ws.write(f'A{startNum}', productID)
+                    # ws.write(f'B{startNum}', imageName)
+                    # ws.write(f'C{startNum}', text)
+                    # ws.write(f'D{startNum}', imageURL)
                     startNum += 1
                 print(datetime.utcnow().isoformat(sep=' ', timespec='milliseconds'))
                 newNum = getImageSize(imagePath, productID, imageName, imageURL, ws1, num)
@@ -71,8 +67,8 @@ def getUnavailableImages():
         print(productID)
         print(s)
     finally:
-        wb.close()
-        wb1.close()
+        # wb.close()
+        # wb1.close()
         return True
 
 
@@ -95,6 +91,7 @@ def getAllImages():
                 images.update({productName: [imageName]})
     file.close()
     return images
+
 
 def saveTheImage(imageURL, imageName):
     downloadTheImage = requests.get(imageURL)
