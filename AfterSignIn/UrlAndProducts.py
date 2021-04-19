@@ -62,7 +62,7 @@ class CheckAllProducts:
                 for image in imagesParent:
                     sumImage = getTagName(image, "a")
                     imageURL = sumImage.get_attribute("href")
-                    os.system(f"echo {imageURL}, {str(num)} >> /Users/danielh/PycharmProjects/SuperMelon/allURLS.txt")
+                    os.system(f"echo {imageURL}, {str(num)} >> allURLS.txt")
                 self.driver.execute_script(f'''window.close();''')
 
     def process_image(self, element, el):
