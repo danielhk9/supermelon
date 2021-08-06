@@ -35,6 +35,7 @@ def imageToAWS():
                         continue
                 else:
                     if s > 1000:
+                        clientS3 = boto3.client('s3', aws_access_key_id=aws_access_key_id,aws_secret_access_key=aws_secret_access_key)
                         clientS3.upload_file(imagePath, "supermelonbucket", imageName)
                     uploadedImages = uploadedImages.replace(uploadedImages, f'{uploadedImages},{imageName}')
                     text = detectText(clientRekognition, imageName)

@@ -1,17 +1,15 @@
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 import xlsxwriter
-from selenium.common.exceptions import ElementNotInteractableException, NoSuchElementException
+from selenium.common.exceptions import ElementNotInteractableException, \
+    TimeoutException, NoSuchElementException, \
+    WebDriverException, ElementClickInterceptedException
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.keys import Keys
 
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-#from selenium.common.exceptions import TimeoutException
-from timeout import timeout,TimeoutException
+from selenium.common import exceptions
+
 
 
 def getAllSubAndMainCategories(driver):
@@ -19,7 +17,7 @@ def getAllSubAndMainCategories(driver):
                                      '//ul[@class="vertical-type sm-megamenu-hover sm_megamenu_menu sm_megamenu_menu_black"]')
     categories = getTagNames(pCategories, "li")
     return categories
-#products wrapper grid products-grid amscroll-page
+
 
 def getAllSubAndMainReadyTOShip(driver, element):
     pCategories = findElementByXpath(driver,
@@ -28,8 +26,7 @@ def getAllSubAndMainReadyTOShip(driver, element):
     return categories
 
 def getAllSubAndMainServices(driver):
-    pServices = findElementByXpath(driver,
-                                   '//li[@class="services-parent other-toggle  sm_megamenu_lv1 sm_megamenu_drop parent  "]')
+    pServices = findElementByXpath(driver, '//li[@class="services-parent other-toggle  sm_megamenu_lv1 sm_megamenu_drop parent  "]')
     services = getTagNames(pServices, "a")
     return services
 
@@ -48,14 +45,14 @@ def createExcelFile(fileName, sheetName, detect):
     ws.write('C1', detect, bold)
     ws.write('D1', 'Image URL', bold)
     return [wb, ws]
-
-@timeout(1)
-def getTagNameEX(driver, tagName):
-    try:
-        element = driver.find_element_by_tag_name(tagName)
-        return element
-    except TimeoutException:
-        return False
+#
+# @timeout(1)
+# def getTagNameEX(driver, tagName):
+#     try:
+#         element = driver.find_element_by_tag_name(tagName)
+#         return element
+#     except TimeoutException:
+#         return False
 
 def getTagName(driver, tagName):
     element = driver.find_element_by_tag_name(tagName)
@@ -99,7 +96,7 @@ def findElementByClassName(driver, className):
 
 
 def findElementByXpath(driver, xpath):
-    # example -  '//span[@class="sm_megamenu_title_link"]
+    # example -  '//span[@class="sm_megamenu_title_link"]'
     try:
         element = driver.find_element_by_xpath(xpath)
         return element
@@ -131,14 +128,14 @@ def changeWindowAndSwitch(driver, num, text=None):
 
 
 def clickAndOpenNewTab(driver, element):
-    ActionChains(driver).key_down(Keys.COMMAND).click(element).perform()
     print(f'The "{element.text}" element is pressed')
+    ActionChains(driver).key_down(Keys.COMMAND).click(element).perform()
 
 
 def checkIfPopUpAppears(driver, popup, exitFromPopUp=None):
     driver.switch_to.parent_frame()
     if popup == 'login':
-        if not findElementByXpath(driver, '//input[@title="Email"]'):
+        if not findElementByXpath(driver, '//div[@id="login-popup-container"]'):
             return False
     elif popup == "enterprise":
         if not findElementByXpath(driver, '//div[@class="enterprise-popup"]'):

@@ -1,3 +1,4 @@
+import sys
 import time
 
 import unittest2
@@ -5,6 +6,7 @@ from selenium import webdriver
 from selenium.webdriver import DesiredCapabilities
 from selenium.webdriver.chrome.options import Options
 from AfterSignIn.UrlAndProducts import CheckAllProducts
+from AfterSignIn.ProductID import getAllProductID
 from BeforeSignIn.AllCategories import CheckAllCategories
 from BeforeSignIn.AllServices import CheckAllServices
 from BeforeSignIn.Blog import CheckBlog
@@ -14,47 +16,48 @@ from Helpers.Functions import changeWindowAndSwitch
 from SignInAndOut.LoginToSite import LoginFeature
 import os
 
-from AWS.Rekognition.DetectTextFromImage import detectText
-
 
 class InitFlow(unittest2.TestCase):
+    options = Options()
+    capabilities = DesiredCapabilities.CHROME
+    capabilities["goog:loggingPrefs"] = {"performance": "ALL"}
+    driver = webdriver.Chrome(executable_path=f'{os.getcwd()}/chromedriver', desired_capabilities=capabilities,
+                              options=options)
+    driver.implicitly_wait(10)
+    driver.maximize_window()
+
 
     @classmethod
     def setUpClass(cls):
-        print("setUpClass")
-        options = Options()
-        capabilities = DesiredCapabilities.CHROME
-        capabilities["goog:loggingPrefs"] = {"performance": "ALL"}
-        cls.driver = webdriver.Chrome(executable_path=f'{os.getcwd()}/chromedriver', desired_capabilities=capabilities, options=options)
-        cls.driver.implicitly_wait(10)
-        cls.driver.maximize_window()
-        cls.driver.get("https://supermelon.com/")
+        print("set up class")
+        cls.driver.get("https://supermelon.com/admin/admin")
 
-    # def testAllCategories(self):
-    #     print("test All Categories")
-    #     results = CheckAllCategories(self.driver).pressOnEachCategory()
-    #     self.assertEqual(results, True)
-    #
-    # def testAllServices(self):
-    #     results = CheckAllServices(self.driver).pressOnEachServices()
-    #     self.assertEqual(results, True)
-    #
-    # def testReadyToShip(self):
-    #     results = CheckReadyToShip(self.driver).pressOnReadyToShip()
-    #     self.assertEqual(results, True)
-    #
-    # def testAboutUs(self):
-    #     results = CheckAboutUs(self.driver).pressOnAboutUS()
-    #     self.assertEqual(results, True)
-    #
-    # def testBlogScreen(self):
-    #     results = CheckBlog(self.driver).pressOnBlog()
-    #     self.assertEqual(results, True)
+    def testAllCategories(self):
+        results = CheckAllCategories(self.driver).pressOnEachCategory()
+        self.assertEqual(results, True)
+
+    def testAllServices(self):
+        print("test all services")
+        results = CheckAllServices(self.driver).pressOnEachServices()
+        self.assertEqual(results, True)
+
+    def testReadyToShip(self):
+        results = CheckReadyToShip(self.driver).pressOnReadyToShip()
+        if results:
+            self.loginToSite()
+        self.assertEqual(results, True)
+
+    def testAboutUs(self):
+        results = CheckAboutUs(self.driver).pressOnAboutUS()
+        self.assertEqual(results, True)
+
+    def testBlogScreen(self):
+        results = CheckBlog(self.driver).pressOnBlog()
+        self.assertEqual(results, True)
 
     def loginToSite(self):
         results = LoginFeature(self.driver).checkLoginInFeature()
         self.assertEqual(results, True)
-
 
     def testAllProducts(self):
         t1 = time.perf_counter()
@@ -64,13 +67,17 @@ class InitFlow(unittest2.TestCase):
         print(f'Finished in {t2 - t1} seconds')
         self.assertEqual(results, True)
 
-    #
     # def testSpelling(self):
     #     results = CheckSpellingBeforeSignIn(self.driver).getAllText()
     #     self.assertEqual(results, True)
-    #
+
+    def testProductID(self):
+        print("daniue")
+        results = getAllProductID(self.driver).returnID()
+
 
     def tearDown(self):
+        print("tearDown")
         while True:
             if len(self.driver.window_handles) >= 2:
                 self.driver.switch_to.window(self.driver.window_handles[-1])
@@ -84,7 +91,6 @@ class InitFlow(unittest2.TestCase):
         print("tearDownClass")
         cls.driver.close()
         cls.driver.quit()
-        print("Test Completed")
 
 
 if __name__ == '__main__':
